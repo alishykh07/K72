@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: font1;
+    src: url(../public/fonts/Lausanne-300.woff2);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../public/fonts/Lausanne-500.woff2);
+}
+
+.move-x {
+  display: flex;
+  min-width: 100%;
+  animation: moveAnimation 15s linear infinite;
+}
+
+@keyframes moveAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.moveLink {
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.8s ease;
+}
+
+.link:hover .moveLink {
+  opacity: 1;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marqueeLeft {
+  animation: marqueeLeft 10s linear infinite;
+}
+
+.animate-marqueeRight {
+  animation: marqueeRight 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+.min {
+  rotate: -6deg; /* base position */
+  transform-origin: center; /* rotate from center */
+  will-change: transform;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+
